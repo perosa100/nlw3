@@ -48,6 +48,10 @@ export default function CreateOrphanage() {
       data.append('images', image)
     })
 
+    var xhr = new XMLHttpRequest()
+    xhr.open('POST', '/', true)
+    xhr.send(data)
+
     await api.post('orphanages', data)
 
     alert('cadastro realizado com sucesso')
